@@ -1,16 +1,16 @@
 public class Sorting19 {
 
     int[] data;
-    int jmlData;
+    int jumData;
 
-    Sorting19(int[] data, int jmlData) {
+    Sorting19(int[] data, int jumData) {
         this.data = data;
-        this.jmlData = jmlData;
+        this.jumData = jumData;
     }
 
     void bubbleSort() {
-        for (int i = 0; i < jmlData - 1; i++) {
-            for (int j = 0; j < jmlData - i - 1; j++) {
+        for (int i = 0; i < jumData - 1; i++) {
+            for (int j = 0; j < jumData - i - 1; j++) {
                 if (data[j] > data[j + 1]) {
                     int tmp = data[j];
                     data[j] = data[j + 1];
@@ -20,8 +20,22 @@ public class Sorting19 {
         }
     }
 
+    void SelectionSort() {
+        for (int i = 0; i < jumData - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < jumData; j++) {
+                if (data[j] < data[min]) {
+                    min = j;
+                }
+            }
+            int temp = data[i];
+            data[i] = data[min];
+            data[min] = temp;
+        }
+    }
+
     void tampil() {
-        for (int i = 0; i < jmlData; i++) {
+        for (int i = 0; i < jumData; i++) {
             System.out.print(data[i] + " ");
         }
         System.out.println();
